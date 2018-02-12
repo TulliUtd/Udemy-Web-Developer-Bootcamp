@@ -1,0 +1,5 @@
+var firstName = alert("First Name?");
+var lastName = alert("Last Name?");
+var age = alert("Age?");
+console.log("You're name is " + firstName + lastName);
+console.log("You are " + age);
