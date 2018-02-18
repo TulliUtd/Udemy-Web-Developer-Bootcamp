@@ -1,9 +1,48 @@
-// SECTION 9 - 109 - FOR LOOPS
-for (var i = 5; i < 50; i++) {
-	if (i % 5 === 0 && i %3 ===0){
-		console.log(i);
-	}
+// SECTION 11 - 126
+// Todo List Code Along
+var todos = ["Buy new turtle"];
+
+var input = prompt ("What would you like to do?");
+
+while(input !== "quit"){
+	//handle input
+	if(input === "list"){
+	console.log(todos);
+} else if (input === "new") {
+	//ask for new todo
+	var newTodo = prompt("Enter new todo");
+	//add todos array
+	todos.push(newTodo);
 }
+	//ask again for new input
+	input = prompt ("What would you like to do?");
+}
+console.log("ok, you quit the app");
+
+
+//SECTION 11 - 124
+// PUSH adds to the end, POP removes from the end
+
+// SHIFT removes fron of an array, UNSHIFT to add to the front of an array
+
+// IndexOf finds the index of an item in an array
+/// var friends = ["Austen", "Mike","Moo"];
+// friends.indexOf("Moo"); //2
+/// returns -1 if the element is not present
+/// friends.indexOf("Poppy"); //-1
+
+// Slice copies parts of an array
+/// var friends = ["Austen", "Mike","Moo", "Poppy"];
+/// var puppies = friends.slice(2, 3); //returns moo and poppy
+/// this creates a new array called puppies. this does not alter the original array
+/// you can also copy an entire array by not passing an argument ie friends.slice();
+
+// SECTION 9 - 109 - FOR LOOPS
+// for (var i = 5; i < 50; i++) {
+// 	if (i % 5 === 0 && i %3 ===0){
+// 		console.log(i);
+// 	}
+// }
 
 //SECTION 9 - 106 - annoy o matic game
 // var guess = prompt("Are we thre yet?");
