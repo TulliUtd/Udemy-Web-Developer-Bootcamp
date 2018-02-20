@@ -1,23 +1,102 @@
-// SECTION 11 - 126
-// Todo List Code Along
+// SECTION 11 - 131 
+printReverse([1,2,3,4]);
+//4
+//3
+//2
+//1
+
+
+// Notes about SECTION 11 - 129
+// .forEach takes a callback function, that callback function is expected to have at least 1, but up to 3 arguments. This is how .forEach was designed.
+
+// The arguments are in a specific order:
+// - The first one represents each element in the array (per loop iteration) that .forEach was called on.
+// - The second represents the index of said element.
+// - The third represents the array that .forEach was called on (it will be the same for every iteration of the loop).
+
+// You have a couple options when calling .forEach on an array:
+
+// You can pass in an anonymous function:
+
+// [1,2,3].forEach(function(el, i, arr) {
+//   console.log(el, i, arr);
+// });
+// Or you can pass in a pre-written, named function.
+
+// function logNums(el, i, arr) {
+//   console.log(el, i, arr);
+// }
+ 
+// [1,2,3].forEach(logNums);
+// Notice how in the second example we don't invoke logNums when passing it into .forEach? We simply pass in the function name. We don't need to invoke the logNums function, .forEach does that for us. In fact, it invokes the function multiple times, once for every element inside of the array.
+
+
+
+// SECTION 11 - 129
+// Todo List Code Along Part 2
 var todos = ["Buy new turtle"];
 
-var input = prompt ("What would you like to do?");
+var input = prompt("What would you like to do?");
 
 while(input !== "quit"){
 	//handle input
 	if(input === "list"){
-	console.log(todos);
-} else if (input === "new") {
+		listTodos();
+	} else if (input === "new") {
+		addTodo();
+	} else if (input === "delete"){
+		deleteTodo();
+	}
+	//ask again for new input
+	input = prompt("What would you like to do?");
+}
+console.log("ok, you quit the app");
+
+function listTodos(){
+	console.log("*****");
+	todos.forEach(function(todo, i){
+		console.log(i + ": " + todo);
+	});
+	console.log("*****");
+}
+
+function addTodo(){
 	//ask for new todo
 	var newTodo = prompt("Enter new todo");
 	//add todos array
 	todos.push(newTodo);
+	console.log("Added Todo");
 }
-	//ask again for new input
-	input = prompt ("What would you like to do?");
+
+function deleteTodo(){
+	//ask for inde of todo to be deleted
+	var index = prompt("Enter index of todo to delete");
+	//delete the todo
+	//splice ()
+	todos.splice(index, 1);
+	console.log("deleted Todo");
 }
-console.log("ok, you quit the app");
+
+// SECTION 11 - 126
+// Todo List Code Along
+// var todos = ["Buy new turtle"];
+
+// var input = prompt ("What would you like to do?");
+
+// while(input !== "quit"){
+// 	//handle input
+// 	if(input === "list"){
+// 	console.log(todos);
+// } else if (input === "new") {
+// 	//ask for new todo
+// 	var newTodo = prompt("Enter new todo");
+// 	//add todos array
+// 	todos.push(newTodo);
+// }
+// 	//ask again for new input
+// 	input = prompt ("What would you like to do?");
+// }
+// console.log("ok, you quit the app");
 
 
 //SECTION 11 - 124
